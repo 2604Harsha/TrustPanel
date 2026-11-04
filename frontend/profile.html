@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TrustPanel | My Profile</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/user-dashboard.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+
+    <script src="./js/config.js" defer></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/profile.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-icon">TP</div>
+            <span>TrustPanel</span>
+        </div>
+
+
+        <div class="sidebar-section">
+
+            <p class="sidebar-label">WORKSPACE</p>
+
+            <a href="user-dashboard.html" class="nav-link">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="profile.html" class="nav-link active">
+                <span class="nav-icon">♙</span>
+                <span>My Profile</span>
+            </a>
+
+            <a href="activity.html" class="nav-link">
+                <span class="nav-icon">◷</span>
+                <span>Activity</span>
+            </a>
+
+            <a href="security.html" class="nav-link">
+                <span class="nav-icon">♢</span>
+                <span>Security</span>
+            </a>
+
+        </div>
+
+
+        <div class="sidebar-section">
+
+            <p class="sidebar-label">PREFERENCES</p>
+
+            <a href="settings.html" class="nav-link">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <div class="help-icon">?</div>
+
+                <div>
+                    <h4>Need help?</h4>
+                    <p>We're here to help you.</p>
+                </div>
+
+                <button
+                    class="help-arrow"
+                    id="helpButton"
+                    type="button">
+                    →
+                </button>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                id="logoutButton"
+                type="button">
+
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="menu-button"
+                    id="menuToggle"
+                    type="button">
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+                    <span>Workspace</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <strong>My Profile</strong>
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button
+                    class="icon-button"
+                    id="themeToggle"
+                    type="button"
+                    title="Toggle theme">
+                    ☾
+                </button>
+
+                <div class="topbar-divider"></div>
+
+                <button
+                    class="user-menu"
+                    id="userMenuButton"
+                    type="button">
+
+                    <div class="avatar" id="topbarAvatar">U</div>
+
+                    <div class="user-menu-info">
+                        <strong id="topbarName">User</strong>
+                        <span>Member account</span>
+                    </div>
+
+                    <span class="dropdown-arrow">⌄</span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <section class="page-content">
+
+            <div class="welcome-section">
+
+                <div>
+                    <p class="welcome-date">
+                        YOUR PERSONAL SPACE
+                    </p>
+
+                    <h1>My Profile</h1>
+
+                    <p class="welcome-description">
+                        Manage your personal information and account security.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <section class="panel profile-panel">
+
+                <div class="profile-avatar-section">
+
+                    <div
+                        class="avatar large-avatar"
+                        id="profileAvatar">
+                        U
+                    </div>
+
+                    <div class="profile-heading">
+
+                        <h3 id="profileDisplayName">
+                            User Name
+                        </h3>
+
+                        <p id="profileDisplayEmail">
+                            user@example.com
+                        </p>
+
+                        <span
+                            class="profile-role-badge"
+                            id="profileDisplayRole">
+                            User
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-section-heading">
+                    <h3>Personal information</h3>
+                    <p>Update your account information.</p>
+                </div>
+
+
+                <form id="profileForm" class="settings-form">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="profileName">
+                                Full name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileName"
+                                class="plain-input"
+                                placeholder="Enter your full name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profileEmail">
+                                Email address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="profileEmail"
+                                class="plain-input"
+                                disabled>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="profileRole">
+                                Account role
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileRole"
+                                class="plain-input"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profilePhone">
+                                Phone number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="profilePhone"
+                                class="plain-input"
+                                placeholder="Enter phone number">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="profileLocation">
+                            Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="profileLocation"
+                            class="plain-input"
+                            placeholder="Enter your location">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="profileBio">
+                            About me
+                        </label>
+
+                        <textarea
+                            id="profileBio"
+                            class="plain-input"
+                            rows="4"
+                            placeholder="Write something about yourself"></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button compact"
+                        id="saveProfileButton">
+
+                        Save changes
+
+                    </button>
+
+                </form>
+
+
+                <div class="section-divider"></div>
+
+                <div class="profile-section-heading">
+
+                    <h3>Change password</h3>
+
+                    <p>
+                        Keep your account secure by using a strong password.
+                    </p>
+
+                </div>
+
+
+                <form id="changePasswordForm" class="settings-form">
+
+                    <div class="form-group">
+
+                        <label for="currentPassword">
+                            Current password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            class="plain-input"
+                            placeholder="Enter current password"
+                            autocomplete="current-password"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="newPassword">
+                                New password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="newPassword"
+                                class="plain-input"
+                                minlength="8"
+                                placeholder="Enter new password"
+                                autocomplete="new-password"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirm new password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                class="plain-input"
+                                minlength="8"
+                                placeholder="Confirm new password"
+                                autocomplete="new-password"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="secondary-button"
+                        id="changePasswordButton">
+
+                        Update password
+
+                    </button>
+
+                </form>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+</body>
+</html>

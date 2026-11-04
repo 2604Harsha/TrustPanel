@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard | Northstar</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/user-dashboard.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+
+    <script src="./js/config.js" defer></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/user-dashboard.js" defer></script>
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-icon">TP</div>
+            <span>TrustPanel</span>
+        </div>
+
+        <div class="sidebar-section">
+            <p class="sidebar-label">WORKSPACE</p>
+
+            <a href="dashboard.html" class="nav-link active">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="profile.html" class="nav-link">
+                <span class="nav-icon">♙</span>
+                <span>My Profile</span>
+            </a>
+
+            <a href="activity.html" class="nav-link">
+                <span class="nav-icon">◷</span>
+                <span>Activity</span>
+            </a>
+
+            <a href="security.html" class="nav-link">
+                <span class="nav-icon">♢</span>
+                <span>Security</span>
+            </a>
+        </div>
+
+        <div class="sidebar-section">
+            <p class="sidebar-label">PREFERENCES</p>
+
+            <a href="settings.html" class="nav-link">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+                <div class="help-icon">?</div>
+
+                <div>
+                    <h4>Need help?</h4>
+                    <p>We're here to help you.</p>
+                </div>
+
+                <button class="help-arrow" id="helpButton">→</button>
+            </div>
+
+            <button class="logout-button" id="logoutButton">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="menu-button" id="menuButton">☰</button>
+
+                <div class="breadcrumb">
+                    <span>Workspace</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <strong>Dashboard</strong>
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="icon-button notification-button" id="notificationButton">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-divider"></div>
+
+                <button class="user-menu" id="userMenuButton">
+
+                    <div class="avatar" id="topbarAvatar">U</div>
+
+                    <div class="user-menu-info">
+                        <strong id="topbarName">User</strong>
+                        <span>Member account</span>
+                    </div>
+
+                    <span class="dropdown-arrow">⌄</span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <section class="page-content">
+            <div class="welcome-section">
+
+                <div>
+                    <p class="welcome-date" id="currentDate"></p>
+
+                    <h1>
+                        Welcome back,
+                        <span id="welcomeName">User</span>
+                    </h1>
+
+                    <p class="welcome-description">
+                        Here's what's happening with your account today.
+                    </p>
+                </div>
+
+                <div class="welcome-actions">
+
+                    <button class="button button-outline" id="profileButton">
+                        View profile
+                    </button>
+
+                    <button class="button button-primary" id="settingsButton">
+                        Account settings
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </div>
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+                        <span class="stat-label">Account status</span>
+
+                        <div class="stat-icon purple">♙</div>
+                    </div>
+
+                    <h2 id="accountStatus">Active</h2>
+
+                    <div class="stat-footer">
+                        <span class="status-dot"></span>
+                        <span>Your account is in good standing</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+                        <span class="stat-label">Last login</span>
+
+                        <div class="stat-icon blue">◷</div>
+                    </div>
+
+                    <h2 id="lastLogin">Today</h2>
+
+                    <div class="stat-footer">
+                        <span>Most recent sign-in</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+                        <span class="stat-label">Profile completion</span>
+
+                        <div class="stat-icon green">✓</div>
+                    </div>
+
+                    <h2 id="profileCompletion">80%</h2>
+
+                    <div class="progress-track">
+                        <div class="progress-fill" id="profileProgress"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+                        <span class="stat-label">Security score</span>
+
+                        <div class="stat-icon orange">♢</div>
+                    </div>
+
+                    <h2 id="securityScore">Good</h2>
+
+                    <div class="stat-footer">
+                        <span>Keep your account protected</span>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="dashboard-grid">
+                <section class="panel account-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Account overview</h2>
+                            <p>Your personal account information</p>
+                        </div>
+
+                        <a href="profile.html" class="text-link">
+                            Edit profile →
+                        </a>
+
+                    </div>
+
+
+                    <div class="account-profile">
+
+                        <div class="large-avatar" id="profileAvatar">U</div>
+
+                        <div class="account-profile-info">
+                            <h3 id="accountName">User Name</h3>
+                            <p id="accountEmail">user@example.com</p>
+
+                            <span class="account-badge">
+                                <span class="status-dot"></span>
+                                Active account
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="account-details">
+
+                        <div class="detail-row">
+                            <span>Full name</span>
+                            <strong id="detailName">User Name</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Email address</span>
+                            <strong id="detailEmail">user@example.com</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Account type</span>
+                            <strong id="detailRole">User</strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Member since</span>
+                            <strong id="detailJoined">November 2026</strong>
+                        </div>
+
+                    </div>
+
+                </section>
+                <section class="panel security-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Security overview</h2>
+                            <p>Keep your account secure</p>
+                        </div>
+
+                        <a href="security.html" class="text-link">
+                            View details →
+                        </a>
+
+                    </div>
+
+
+                    <div class="security-score-container">
+
+                        <div class="security-score-circle">
+                            <div class="security-score-inner">
+                                <strong>85</strong>
+                                <span>of 100</span>
+                            </div>
+                        </div>
+
+                        <div class="security-score-info">
+                            <h3>Good security</h3>
+                            <p>Your account is reasonably protected.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-list">
+
+                        <div class="security-item">
+                            <div class="security-item-left">
+                                <span class="security-check">✓</span>
+                                <span>Email address verified</span>
+                            </div>
+
+                            <span class="security-status">Enabled</span>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-item-left">
+                                <span class="security-check">✓</span>
+                                <span>Password configured</span>
+                            </div>
+
+                            <span class="security-status">Enabled</span>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-item-left">
+                                <span class="security-warning">!</span>
+                                <span>Two-factor authentication</span>
+                            </div>
+
+                            <span class="security-status warning">Not enabled</span>
+                        </div>
+
+                    </div>
+
+
+                    <a href="security.html" class="button button-outline security-button">
+                        Improve security
+                    </a>
+
+                </section>
+                <section class="panel activity-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Recent activity</h2>
+                            <p>Your latest account activity</p>
+                        </div>
+
+                        <a href="activity.html" class="text-link">
+                            View all →
+                        </a>
+
+                    </div>
+
+
+                    <div class="activity-list" id="activityList">
+
+                    </div>
+
+                </section>
+                <section class="panel quick-actions-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Quick actions</h2>
+                            <p>Manage your account</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions-grid">
+
+                        <a href="profile.html" class="quick-action-card">
+
+                            <div class="quick-action-icon purple">
+                                ♙
+                            </div>
+
+                            <div>
+                                <h3>Edit profile</h3>
+                                <p>Update your personal details</p>
+                            </div>
+
+                            <span class="quick-action-arrow">→</span>
+
+                        </a>
+
+
+                        <a href="security.html" class="quick-action-card">
+
+                            <div class="quick-action-icon blue">
+                                ♢
+                            </div>
+
+                            <div>
+                                <h3>Security settings</h3>
+                                <p>Manage password and security</p>
+                            </div>
+
+                            <span class="quick-action-arrow">→</span>
+
+                        </a>
+
+
+                        <a href="settings.html" class="quick-action-card">
+
+                            <div class="quick-action-icon orange">
+                                ⚙
+                            </div>
+
+                            <div>
+                                <h3>Preferences</h3>
+                                <p>Customize your experience</p>
+                            </div>
+
+                            <span class="quick-action-arrow">→</span>
+
+                        </a>
+
+
+                        <a href="activity.html" class="quick-action-card">
+
+                            <div class="quick-action-icon green">
+                                ◷
+                            </div>
+
+                            <div>
+                                <h3>Activity history</h3>
+                                <p>Review account activity</p>
+                            </div>
+
+                            <span class="quick-action-arrow">→</span>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+            <footer class="dashboard-footer">
+
+                <p>© 2026 Northstar. All rights reserved.</p>
+
+                <div>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Help center</a>
+                </div>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+<div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span id="toastMessage">Action completed</span>
+</div>
+
+</body>
+</html>

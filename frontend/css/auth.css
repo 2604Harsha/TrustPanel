@@ -1,0 +1,138 @@
+
+.auth-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    background: var(--surface);
+}
+
+.auth-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 42px 55px;
+    background: #17152f;
+    color: white;
+}
+
+.auth-brand .brand {
+    color: white;
+}
+
+.auth-brand .brand-icon {
+    background: #7565f5;
+}
+
+.brand-content {
+    max-width: 520px;
+}
+
+.auth-brand .eyebrow {
+    color: #a89eff;
+}
+
+.brand-content h1 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(34px, 4vw, 55px);
+    line-height: 1.17;
+    letter-spacing: -2.5px;
+    margin-bottom: 20px;
+}
+
+.brand-content h1 span {
+    color: #a69bff;
+}
+
+.brand-content p {
+    max-width: 420px;
+    color: #b9b7d0;
+    line-height: 1.8;
+}
+
+.brand-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #8d8aa9;
+    font-size: 11px;
+}
+
+.auth-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 35px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.mobile-brand {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    font-family: "Manrope", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.form-heading {
+    margin-bottom: 32px;
+}
+
+.form-heading h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: 29px;
+    letter-spacing: -1.2px;
+    margin-bottom: 10px;
+}
+
+.form-heading p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-row a {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.auth-switch {
+    margin-top: 25px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.auth-switch a {
+    margin-left: 4px;
+    font-weight: 700;
+}
+
+.auth-legal {
+    margin-top: 35px;
+    text-align: center;
+    color: #9998aa;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.back-link:hover {
+    color: var(--primary);
+}

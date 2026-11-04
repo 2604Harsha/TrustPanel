@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustPanel | Register</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/auth.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body class="auth-page">
+
+    <main class="auth-layout">
+        <section class="auth-brand">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">TP</span>
+                TrustPanel
+            </a>
+
+            <div class="brand-content">
+                <span class="eyebrow">GET STARTED</span>
+                <h1>Your next chapter<br>
+                    <span>starts here.</span>
+                </h1>
+                <p>Create your account and bring your team together.</p>
+            </div>
+
+            <div class="brand-footer">
+                <span>© 2026 TrustPanel</span>
+                <span>Secure. Simple. Yours.</span>
+            </div>
+        </section>
+
+        <section class="auth-content">
+            <div class="auth-container">
+
+                <div class="mobile-brand">
+                    <span class="brand-icon">TP</span>
+                    TrustPanel
+                </div>
+
+                <div class="form-heading">
+                    <span class="eyebrow">CREATE ACCOUNT</span>
+                    <h2>Join TrustPanel</h2>
+                    <p>Set up your account in just a few steps.</p>
+                </div>
+
+                <form id="registerForm">
+
+                    <div class="form-group">
+                        <label for="name">Full name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            minlength="8"
+                            placeholder="Minimum 8 characters"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm password</label>
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            minlength="8"
+                            placeholder="Confirm password"
+                            required
+                        >
+                    </div>
+
+                    <label class="checkbox-row">
+                        <input type="checkbox" id="terms" required>
+                        I agree to the Terms and Privacy Policy
+                    </label>
+
+                    <button type="submit" class="primary-button">
+                        Create account →
+                    </button>
+
+                </form>
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="index.html">Sign in</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/register.js"></script>
+</body>
+</html>

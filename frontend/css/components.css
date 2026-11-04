@@ -1,0 +1,120 @@
+
+
+
+.table-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-user .avatar {
+    width: 34px;
+    height: 34px;
+}
+
+.table-user strong,
+.table-user small {
+    display: block;
+}
+
+.table-user strong {
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.table-user small {
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+.status-badge,
+.role-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.status-active {
+    background: var(--green-soft);
+    color: var(--green);
+}
+
+.status-suspended {
+    background: var(--red-soft);
+    color: var(--red);
+}
+
+.role-admin {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.role-user {
+    background: var(--surface-2);
+    color: var(--text-secondary);
+}
+
+.row-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.row-action {
+    display: grid;
+    place-items: center;
+    width: 31px;
+    height: 31px;
+    border: none;
+    border-radius: 8px;
+    background: var(--surface-2);
+    color: var(--text-secondary);
+}
+
+.row-action:hover {
+    color: var(--primary);
+    background: var(--primary-soft);
+}
+
+.row-action.danger:hover {
+    color: var(--red);
+    background: var(--red-soft);
+}
+
+/* User modal */
+
+.user-dialog {
+    width: min(430px, calc(100% - 30px));
+    margin: auto;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: var(--surface);
+    color: var(--text);
+}
+
+.user-dialog::backdrop {
+    background: rgba(20,18,45,.55);
+}
+
+.user-dialog h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.user-dialog label {
+    display: block;
+    margin: 15px 0 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}

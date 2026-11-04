@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TrustPanel | Settings</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/user-dashboard.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/settings-shared.css">
+
+    <script src="./js/config.js" defer></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/settings.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-icon">TP</div>
+            <span>TrustPanel</span>
+        </div>
+
+        <div class="sidebar-section">
+
+            <p class="sidebar-label">WORKSPACE</p>
+
+            <a href="user-dashboard.html" class="nav-link">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="profile.html" class="nav-link">
+                <span class="nav-icon">♙</span>
+                <span>My Profile</span>
+            </a>
+
+            <a href="activity.html" class="nav-link">
+                <span class="nav-icon">◷</span>
+                <span>Activity</span>
+            </a>
+
+            <a href="security.html" class="nav-link">
+                <span class="nav-icon">♢</span>
+                <span>Security</span>
+            </a>
+
+        </div>
+
+        <div class="sidebar-section">
+
+            <p class="sidebar-label">PREFERENCES</p>
+
+            <a href="settings.html" class="nav-link active">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </div>
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <div class="help-icon">?</div>
+
+                <div>
+                    <h4>Need help?</h4>
+                    <p>We're here to help you.</p>
+                </div>
+
+                <button
+                    class="help-arrow"
+                    id="helpButton"
+                    type="button">
+                    →
+                </button>
+
+            </div>
+
+            <button
+                class="logout-button"
+                id="logoutButton"
+                type="button">
+
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="menu-button"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Toggle sidebar">
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+
+                    <span>Workspace</span>
+
+                    <span class="breadcrumb-separator">/</span>
+
+                    <strong>Settings</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button
+                    class="icon-button"
+                    id="themeToggle"
+                    type="button"
+                    title="Toggle theme"
+                    aria-label="Toggle theme">
+                    ☾
+                </button>
+
+                <div class="topbar-divider"></div>
+
+                <button
+                    class="user-menu"
+                    id="userMenuButton"
+                    type="button">
+
+                    <div class="avatar" id="topAvatar">U</div>
+
+                    <div class="user-menu-info">
+
+                        <strong id="topName">User</strong>
+
+                        <span>Member account</span>
+
+                    </div>
+
+                    <span class="dropdown-arrow">⌄</span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <section class="page-content">
+
+            <div class="welcome-section">
+
+                <div>
+
+                    <p class="welcome-date">
+                        MAKE IT YOUR OWN
+                    </p>
+
+                    <h1>Settings</h1>
+
+                    <p class="welcome-description">
+                        Personalize your workspace experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <section class="panel settings-panel">
+                <div class="settings-row">
+
+                    <div class="settings-info">
+
+                        <strong>Dark mode</strong>
+
+                        <p>
+                            Use a darker theme for your workspace.
+                        </p>
+
+                    </div>
+
+                    <label class="settings-switch">
+
+                        <input
+                            type="checkbox"
+                            id="darkMode">
+
+                        <span class="settings-slider"></span>
+
+                    </label>
+
+                </div>
+                <div class="settings-row">
+
+                    <div class="settings-info">
+
+                        <strong>Email notifications</strong>
+
+                        <p>
+                            Receive updates about workspace activity.
+                        </p>
+
+                    </div>
+
+                    <label class="settings-switch">
+
+                        <input
+                            type="checkbox"
+                            id="emailNotifications">
+
+                        <span class="settings-slider"></span>
+
+                    </label>
+
+                </div>
+                <div class="settings-row">
+
+                    <div class="settings-info">
+
+                        <strong>Security notifications</strong>
+
+                        <p>
+                            Receive alerts about security events.
+                        </p>
+
+                    </div>
+
+                    <label class="settings-switch">
+
+                        <input
+                            type="checkbox"
+                            id="securityNotifications">
+
+                        <span class="settings-slider"></span>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+<div id="toast" class="toast"></div>
+
+</body>
+</html>

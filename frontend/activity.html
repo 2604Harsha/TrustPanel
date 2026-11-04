@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustPanel | Activity Log</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-layout">
+
+        <aside class="sidebar" id="sidebar">
+            <a href="dashboard.html" class="sidebar-brand brand">
+                <span class="brand-icon">TP</span> TrustPanel
+            </a>
+
+            <div class="sidebar-label">WORKSPACE</div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">Overview</a>
+                <a href="users.html" class="nav-item admin-only">Users</a>
+                <a href="activity.html" class="nav-item active admin-only">Activity Log</a>
+                <a href="security.html" class="nav-item admin-only">Security</a>
+                <div class="sidebar-divider"></div>
+                <div class="sidebar-label">PREFERENCES</div>
+                <a href="profile.html" class="nav-item">My Profile</a>
+                <a href="settings.html" class="nav-item">Settings</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-user">
+                    <div class="avatar" id="sidebarAvatar">A</div>
+                    <div>
+                        <strong id="sidebarName">Admin</strong>
+                        <small id="sidebarRole">Administrator</small>
+                    </div>
+                    <button id="logoutButton" class="icon-button">Logout</button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="topbar">
+                <button id="menuToggle" class="icon-button mobile-menu">☰</button>
+                <div>
+                    <span class="breadcrumb">Workspace /</span>
+                    <strong>Activity log</strong>
+                </div>
+                <div class="topbar-right">
+                    <button id="themeToggle" class="icon-button">☾</button>
+                    <span id="topName"></span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-heading">
+                    <div>
+                        <span class="eyebrow">WORKSPACE HISTORY</span>
+                        <h1>Activity log</h1>
+                        <p>Review authentication and account actions.</p>
+                    </div>
+                </div>
+
+                <section class="panel">
+                    <div class="panel-heading">
+                        <h3>Recent events</h3>
+                    </div>
+                    <div id="activityList" class="activity-list"></div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/activity.js"></script>
+</body>
+</html>

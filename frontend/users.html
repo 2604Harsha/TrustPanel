@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustPanel | Users</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body class="dashboard-page">
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar" id="sidebar">
+            <a href="dashboard.html" class="sidebar-brand brand">
+                <span class="brand-icon">TP</span>
+                TrustPanel
+            </a>
+
+            <div class="sidebar-label">WORKSPACE</div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">Overview</a>
+                <a href="users.html" class="nav-item active admin-only">Users</a>
+                <a href="activity.html" class="nav-item admin-only">Activity Log</a>
+                <a href="security.html" class="nav-item admin-only">Security</a>
+                <div class="sidebar-divider"></div>
+                <div class="sidebar-label">PREFERENCES</div>
+                <a href="profile.html" class="nav-item">My Profile</a>
+                <a href="settings.html" class="nav-item">Settings</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-user">
+                    <div class="avatar" id="sidebarAvatar">A</div>
+                    <div>
+                        <strong id="sidebarName">Admin</strong>
+                        <small id="sidebarRole">Administrator</small>
+                    </div>
+                    <button id="logoutButton" class="icon-button">Logout</button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="topbar">
+                <button id="menuToggle" class="icon-button mobile-menu">☰</button>
+                <div>
+                    <span class="breadcrumb">Workspace /</span>
+                    <strong>User management</strong>
+                </div>
+                <div class="topbar-right">
+                    <button id="themeToggle" class="icon-button">☾</button>
+                    <span id="topName"></span>
+                </div>
+            </header>
+
+            <div class="content-area">
+
+                <div class="page-heading">
+                    <div>
+                        <span class="eyebrow">WORKSPACE MANAGEMENT</span>
+                        <h1>User management</h1>
+                        <p>Manage accounts, roles, and access permissions.</p>
+                    </div>
+
+                    <button id="addUserButton" class="primary-button compact">
+                        + Add user
+                    </button>
+                </div>
+
+                <section class="panel table-panel">
+
+                    <div class="users-toolbar">
+                        <input
+                            type="search"
+                            id="userSearch"
+                            class="plain-input"
+                            placeholder="Search name or email"
+                        >
+
+                        <select id="roleFilter" class="plain-input">
+                            <option value="all">All roles</option>
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                        </select>
+
+                        <select id="statusFilter" class="plain-input">
+                            <option value="all">All statuses</option>
+                            <option value="active">Active</option>
+                            <option value="suspended">Suspended</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Joined</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTable"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-footer">
+                        <span id="userResultsCount">0 users</span>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <dialog id="userDialog" class="user-dialog">
+        <form id="userForm">
+            <h2 id="dialogTitle">Add user</h2>
+
+            <label for="userName">Full name</label>
+            <input id="userName" class="plain-input" required>
+
+            <label for="userEmail">Email address</label>
+            <input id="userEmail" type="email" class="plain-input" required>
+
+            <label for="userRole">Role</label>
+            <select id="userRole" class="plain-input">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <div class="dialog-actions">
+                <button type="button" id="cancelDialog" class="secondary-button">
+                    Cancel
+                </button>
+                <button type="submit" class="primary-button compact">
+                    Save user
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/users.js"></script>
+</body>
+</html>
